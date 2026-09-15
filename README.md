@@ -1,27 +1,37 @@
 # Lanterna do Norte
 
-Aplicador de um tema original de fantasia invernal para Android. Ele cria localmente
-um papel de parede com céu noturno, pinheiros, neve e uma lanterna dourada, sem baixar
-imagens ou enviar dados.
+Aplicador de um tema original de fantasia invernal para Android. Cria
+localmente um papel de parede com céu noturno, pinheiros, neve e lanterna
+dourada — sem baixar imagens nem enviar dados.
+
+- Pacote: `com.lanternadonorte`
 
 ## Uso
 
 1. Instale `build/Lanterna-do-Norte.apk`.
 2. Abra **Lanterna do Norte** e toque em **Aplicar papel de parede**.
-3. Opcionalmente, toque em **Usar como tela inicial** e selecione o aplicativo nas
-   configurações do Android. Isso mantém seus apps e os exibe em uma grade temática.
+3. Opcional: **Usar como tela inicial** e selecione o app nas configurações.
+   Isso mantém seus apps, exibidos numa grade temática ("O Portal do Norte").
 
-O launcher padrão da Motorola não dá permissão a apps externos para substituir os
-ícones globais. Por isso, a alteração de ícones existe somente no modo de tela inicial
-opcional; o papel de parede funciona com o launcher que você já usa.
+O launcher padrão da Motorola não dá permissão a apps externos para trocar os
+ícones globais — a troca de ícones existe só no modo de tela inicial; o papel
+de parede funciona com qualquer launcher.
 
 ## Privacidade e permissões
 
-O APK não declara acesso à internet, mídia, contatos, localização ou notificações.
-Ele usa somente `SET_WALLPAPER` para gravar a arte em tela inicial e bloqueio.
+Sem internet, mídia, contatos, localização ou notificações. Só
+`SET_WALLPAPER` (tela inicial + bloqueio).
+
+## Compilar
+
+Pipeline padrão aapt2+javac+d8 (ver pastas irmãs). Arte 100% procedural em
+`src/`.
 
 ## Estrutura
 
-- `src/` — código Java da interface, da tela inicial alternativa e da arte procedural.
-- `res/` — ícone e estilo do app.
-- `build/Lanterna-do-Norte.apk` — APK assinado gerado para instalação.
+```
+lanterna-do-norte/
+├── src/com/lanternadonorte/MainActivity.java  # arte + launcher alternativo
+├── res/  # ícone e estilo
+└── build/Lanterna-do-Norte.apk
+```
